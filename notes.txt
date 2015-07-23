@@ -1,0 +1,52 @@
+----------
+DIRECTIVES
+----------
+
+ng-app - attaches the Application Module to the page
+<html ng-app="store">
+
+ng-controller - attaches a controller function to the page
+<body ng-controller="StoreController as store">
+
+ng-show / ng-hide - display a section based on an Expression
+<h1 ng-show="name"> Hello, {{name}}! </h1>
+
+ng-repeat - repeat a section for each item in an Array
+<li ng-repeat"product in store.products"> {{product.name}} </li>
+
+ng-src - inserts an image
+<img ng-src="{{product.images[0]}}"/>
+
+-----------
+FILTERS
+-----------
+
+Generally of the form
+
+{{ data | filter:options }}
+
+date:
+{{'1388123412323' | date:'MM/dd/yyyy @ h:mma'}} 
+-->
+12/27/2013 @ 12:50AM
+
+uppercase & lowercase
+{{"octagon gem" | uppercase }}
+---> 
+OCTAGON GEM
+
+limitTo
+{{"My description" | limitTo:8}} 
+-->
+My Descr
+
+<li ng-repeat="product in store.products | limitTo:3">
+
+orderBy
+<li ng-repeat="product in store.products | orderBy:'-price'">
+(-price is descending, without the minus, it will be ascending order)
+
+<em class="pull-right">${{product.price | currency}}</em>
+
+The pipe in {{product.price | currency}} "sends the output info" 
+It gives the dollar sign localized and specifies the # of decimals.

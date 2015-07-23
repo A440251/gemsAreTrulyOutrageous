@@ -16,7 +16,7 @@ is a good habit to get into.
 	var gems = [
 	{
 		name: 'Dodecahedron',
-		price: 2.95,
+		price: 2,
 		description: 'This is a nice dodecahedron',
 		canPurchase: true,
 		sold0ut: true
